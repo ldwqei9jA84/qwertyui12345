@@ -1,0 +1,198 @@
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    background:    #46015a;
+    font-family: 'Peace Sans', sans-serif;
+    overflow: hidden;
+}
+button, .task-button {
+    font-family: 'Peace Sans', sans-serif;
+}
+
+#coinCount, .task-description, #countdown {
+    font-family: 'Peace Sans', sans-serif;
+}
+
+.main-container, .task-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: url("menu.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    height: calc(85vh - 60px); /* Уменьшить высоту контейнера, чтобы не перекрывать футер */
+    max-width: 400px;
+    position: relative; /* Чтобы футер был вне этого контейнера */
+}
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    z-index: 1; /* Первая страница выше второй */
+}
+/* Стили для кнопки фарминга */
+#farmButton {
+    position: absolute;
+    bottom: 20px; /* Расположение кнопки фарминга внизу */
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 20px; /* Увеличен размер шрифта для видимости */
+}
+
+.task-container {
+    display: none; /* Скрыть вторую страницу по умолчанию */
+    z-index: 0; /* Вторая страница ниже первой */
+}
+
+   
+.custom-text {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 35px;
+    color: #ddd;
+}
+
+.text-border {
+    display: inline-block;
+    position: relative;
+    font-size: 2rem;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 10px;
+    padding: 5px;
+}
+
+.text-border::before, .text-border::after {
+    content: '';
+    position: absolute;
+    border: 2px solid #d900ff; /* Фиолетовая граница */
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    z-index: -1;
+}
+
+.text-border::before {
+    left: 0;
+    right: 0;
+    border-bottom: none;
+}
+
+.text-border::after {
+    left: -10px; /* Отступы для эффекта границы */
+    right: -10px;
+    border-left: none;
+    border-right: none;
+}
+
+.coin-info {
+    text-align: center;
+    margin-top: 300px;
+}
+
+.coin-label {
+    font-size: 1.5rem; /* Размер шрифта для текста "Balance" */
+    color: #ffffff;
+    margin-bottom: 10px; /* Расстояние между текстом и количеством монет */
+}
+
+.coin-count {
+    font-size: 2rem; /* Размер шрифта для количества монет */
+    font-weight: bold;
+    color: #ffffff;
+    margin-top: 10px; /* Расстояние между текстом и количеством монет */
+}
+
+
+
+.farm-button-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: auto; /* Помещаем кнопку Фарм внизу контейнера */
+}
+
+.farm-button {
+    padding: 15px 25px;
+    font-size: 1.2rem;
+    color: white;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+}
+
+.farm-button:hover {
+    background-color: #45a049;
+}
+
+.task-list {
+    width: 100%;
+}
+
+.task-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #ddd;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.task-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.task-description {
+    flex: 1;
+    margin: 0 10px;
+    font-size: 16px;
+    font-style: italic;
+    font-weight: 700;
+    color: #ddd;
+}
+
+.task-button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: white;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.task-button:hover {
+    background-color: #45a049;
+}
+
+.taskbottom-nav {
+    position: absolute;
+    bottom: 10px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 10px 0;
+    background: transparent; /* Обеспечивает, что футер не перекрывается контейнером */
+}
+
+.taskbottom-nav img {
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    margin: 0 105px; /* Отступы между иконками */
+}

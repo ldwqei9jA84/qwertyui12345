@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Telegram Bot Interface</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Peace+Sans:wght@400;700&display=swap">
+
+</head>
+<body>
+    <!-- Основной контейнер для первой страницы -->
+<!-- Основной контейнер для первой страницы -->
+<div class="main-container" id="mainPage">
+    <!-- Пользовательский текст -->
+    <div class="custom-text">
+        <div class="text-border">Animal Save Coin</div>
+        <div class="text-border">On Solana</div>
+    </div>
+
+    <!-- Количество монет -->
+    <div class="coin-info">
+        <div class="coin-label">Balance:</div>
+        <div class="coin-count" id="coinCount">
+            0
+        </div>
+    </div>
+
+    <!-- Обратный отсчет -->
+    <div id="countdown" class="countdown" style="display: none;">
+        Осталось: 10 секунд
+    </div>
+
+    <!-- Кнопка Фарм -->
+    <div class="farm-button-container">
+        <button class="farm-button" id="farmButton" onclick="startFarming()">Farm</button>
+    </div>
+</div>
+
+
+    <!-- Основной контейнер для второй страницы -->
+    <div class="task-container" id="taskPage" style="display: none;">
+        <!-- Заголовок страницы заданий -->
+        <div class="custom-text" id="taskHeader">
+            Tasks
+        </div>
+
+        <!-- Список заданий -->
+        <div class="task-list">
+            <!-- Пример задания 1 -->
+            <div class="task-item">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Avatar" class="task-avatar">
+                <div class="task-description">Subscribe to Instagram</div>
+                <button class="task-button" onclick="executeTask('https://www.instagram.com/animal_save_coin?igsh=c241aWtmbTlxcnp5', this.closest('.task-item'))">To perform.</button>
+            </div>
+            
+            <!-- Пример задания 2 -->
+            <div class="task-item">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg" alt="Avatar" class="task-avatar">
+                <div class="task-description">Subscribe to Telegram</div>
+                <button class="task-button" onclick="executeTask('https://t.me/animalsavecoin', this.closest('.task-item'))">To perform.</button>
+            </div>
+            
+            <!-- Пример задания 3 -->
+            <div class="task-item">
+                <img src="https://avatars.mds.yandex.net/i?id=f5852ff1e136092bbeb981b696a05bed_l-6431583-images-thumbs&n=13" alt="Avatar" class="task-avatar">
+                <div class="task-description">Subscribe to X</div>
+                <button class="task-button" onclick="executeTask('https://x.com/AirdropAsc', this.closest('.task-item'))">To perform.</button>
+            </div>
+            
+                
+            <!-- Пример задания 4 -->
+            <div class="task-item">
+                <img src="https://www.pinclipart.com/picdir/big/534-5340934_com-facebook-icon-white-png-80848-free-facebook.png" alt="Avatar" class="task-avatar">
+                <div class="task-description">subscribe to Facebook</div>
+                <button class="task-button" onclick="executeTask('https://m.facebook.com/61564874763671/', this.closest('.task-item'))">To perform.</button>
+            </div>
+            <!-- Пример задания 5 -->
+           
+        </div>
+    </div>
+
+    <!-- Блок с нижними кнопками -->
+    <div class="taskbottom-nav">
+        <img src="https://i.ibb.co/4Yp2J35/home.png" alt="Home" onclick="showMainPage()">
+        <img src="https://i.ibb.co/xhPGsct/tasks.png" alt="Menu" onclick="showTaskPage()">
+    </div>
+
+    <!-- Подключение JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
